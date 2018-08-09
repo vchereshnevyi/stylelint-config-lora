@@ -1,0 +1,33 @@
+{
+  "name": "stylelint-config-lora",
+  "version": "1.0.0",
+  "description": "Centralized stylelint rules for all LORA project based",
+  "main": "index.js",
+  "scripts": {
+    "dry-release": "npmpub --dry --verbose",
+    "release": "npmpub"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cxq/stylelint-config-lora.git"
+  },
+  "keywords": [
+    "styelint",
+    "lora"
+  ],
+  "author": "Xiu qiang CHU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cxq/stylelint-config-lora/issues"
+  },
+  "homepage": "https://github.com/cxq/stylelint-config-lora#readme",
+  "dependencies": {
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-declaration-use-variable": "^1.7.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
+  },
+  "devDependencies": {
+    "npmpub": "^4.1.0",
+    "stylelint": "^9.4.0"
+  }
+}
