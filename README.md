@@ -10,7 +10,7 @@ npm install stylelint-config-lora --save-dev
 If you've installed `stylelint-config-standard` locally within your project, just set your stylelint config to:
 ```json
 {
-  "extends": "stylelint-config-recommended"
+  "extends": "stylelint-config-lora"
 }
 ```
 
