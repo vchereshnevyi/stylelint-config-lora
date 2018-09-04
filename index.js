@@ -9,6 +9,7 @@ module.exports = {
     "rules": {
         "selector-class-pattern": "^(?:(?:c|l|u)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
         "no-missing-end-of-source-newline": null,
+        "no-extra-semicolons": true,
         "at-rule-empty-line-before": null,
         "at-rule-no-unknown": [true, {
             "ignoreAtRules": ["extend", "at-root", "debug", "warn", "error", "if", "else", "for", "each", "while", "mixin", "include", "content", "return", "function"]
@@ -33,6 +34,7 @@ module.exports = {
         "time-min-milliseconds": 100,
         "selector-max-type": 1,
         "selector-max-universal": 1,
+        "no-duplicate-at-import-rules": true,
         "media-feature-name-blacklist": [
             ["max-width", "min-width", "min-resolution", "max-resolution"],
             {
@@ -51,6 +53,6 @@ module.exports = {
             },
             "utilitySelectors": "^\\.util-[a-z]+$"
         },
-        "sh-waqar/declaration-use-variable": [["/color/", "font-size"]]
+        "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size", { ignoreValues: ["0", "-1", "inherit", "/z\(.*\)/"] }]]
     }
 };
