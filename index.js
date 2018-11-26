@@ -4,7 +4,8 @@ module.exports = {
     "extends": "stylelint-config-standard",
     "plugins": [
         "stylelint-selector-bem-pattern",
-        "stylelint-declaration-use-variable"
+        "stylelint-declaration-use-variable",
+        "./lora/index.js"
     ],
     "rules": {
         "selector-class-pattern": "^(?:(?:c|l|u)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
@@ -53,6 +54,9 @@ module.exports = {
             },
             "utilitySelectors": "^\\.util-[a-z]+$"
         },
-        "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size", { ignoreValues: ["0", "-1", "inherit", "/z\(.*\)/"] }]]
+        "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size", { ignoreValues: ["0", "-1", "inherit", "/z\(.*\)/"] }]],
+
+        // LORA specific rules
+        "lora/variable-pattern": /(components|layout)(\/.*\/)?\/*_.+.scss/ // Pattern is meant to filter the files.
     }
 };

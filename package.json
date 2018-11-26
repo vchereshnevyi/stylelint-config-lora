@@ -27,6 +27,7 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "devDependencies": {
+    "lodash": "^4.17.11",
     "npmpub": "^4.1.0",
     "stylelint": "^9.4.0"
   }
