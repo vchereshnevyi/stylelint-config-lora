@@ -57,6 +57,6 @@ module.exports = {
         "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size", { ignoreValues: ["0", "-1", "inherit", "/z\(.*\)/"] }]],
 
         // LORA specific rules
-        "lora/variable-pattern": /(components|layout)(\/.*\/)?\/*_.+.scss/ // Pattern is meant to filter the files.
+        "lora/variable-pattern": [/(components|layout)(\/.*\/)?\/*_.+.scss/, { ignore: 'local' }], // Pattern is meant to filter the files.
     }
 };

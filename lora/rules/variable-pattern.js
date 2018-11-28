@@ -70,8 +70,15 @@ const rule = function (filePattern, secondaryOptions) {
 
             // Test if the folder name is not starting with zero
             if (categoryFolder && !(/^0\d/.test(categoryFolder))) {
-                expectedPrefix = `${categoryFolder}-${name}`;
-                const filenameFolderRegex = new RegExp(`^\\$${expectedPrefix}-`);
+                const variableNameRegex = new RegExp(`^(${categoryFolder})-(.+)`);
+
+                if (categoryFolder === name) {
+                    // no need to prefix if folder name is same as file name
+                    return;
+                }
+                // Test a scss file within a subfolder has to be prefixed by the folder name.
+                expectedPrefix = `${categoryFolder}-${name.replace(variableNameRegex, '$2')}`;
+                const filenameFolderRegex = new RegExp(`^\\$${expectedPrefix}`);
                 if (filenameFolderRegex.test(prop)) {
                     return;
                 };
