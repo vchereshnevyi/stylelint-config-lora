@@ -37,7 +37,7 @@ const rule = function (filePattern, secondaryOptions) {
         root.walkDecls(decl => {
             const { prop } = decl;
 
-            const filepath = decl.source.input.file;
+            const filepath = decl.source.input.file.replace(/\\/g,'/');
 
             // Should filter the SASS files that should apply the pattern 
             if (!(regexpPattern.test(filepath))) {
