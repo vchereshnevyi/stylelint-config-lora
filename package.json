@@ -22,13 +22,16 @@
   },
   "homepage": "https://github.com/cxq/stylelint-config-lora#readme",
   "dependencies": {
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-declaration-use-variable": "^1.7.0",
-    "stylelint-selector-bem-pattern": "^2.0.0"
+    "postcss": "^8.4.14",
+    "postcss-selector-parser": "^6.0.10",
+    "postcss-syntax": "^0.36.2",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-declaration-strict-value": "^1.9.0",
+    "stylelint-selector-bem-pattern": "^2.1.1"
   },
   "devDependencies": {
     "lodash": "^4.17.15",
     "npmpub": "^4.1.0",
-    "stylelint": "^9.4.0"
+    "stylelint": "^14.9.1"
   }
 }

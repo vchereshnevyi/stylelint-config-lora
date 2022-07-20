@@ -1,10 +1,10 @@
 "use strict"
 
 module.exports = {
-    "extends": "stylelint-config-standard",
+    "extends": "stylelint-config-standard-scss",
     "plugins": [
         "stylelint-selector-bem-pattern",
-        "stylelint-declaration-use-variable",
+        "stylelint-declaration-strict-value",
         "./lora/index.js"
     ],
     "rules": {
@@ -16,6 +16,31 @@ module.exports = {
             "ignoreAtRules": ["at-root", "debug", "warn", "error", "if", "else", "for", "each", "while", "mixin", "include", "content", "return", "function"]
         }],
         "comment-whitespace-inside": null,
+        "scss/dollar-variable-pattern": null,
+        "scss/at-rule-conditional-no-parentheses": null,
+        "scss/double-slash-comment-empty-line-before": null,
+        "scss/at-import-no-partial-leading-underscore": null,
+        "scss/dollar-variable-empty-line-before": null,
+        "scss/double-slash-comment-whitespace-inside": null,
+        "scss/at-mixin-argumentless-call-parentheses": null,
+        "scss/at-mixin-parentheses-space-before": null,
+        "scss/no-global-function-names": null,
+        "scss/operator-no-unspaced": null,
+        "scss/at-if-closing-brace-newline-after": null,
+        "scss/at-if-closing-brace-space-after": null,
+        "scss/at-else-closing-brace-newline-after": null,
+        "scss/at-else-closing-brace-space-after": null,
+        "scss/at-if-no-null": null,
+        "selector-not-notation": null,
+        "declaration-block-no-redundant-longhand-properties": null,
+        "color-function-notation": null,
+        "string-quotes": null,
+        "value-no-vendor-prefix": null,
+        "alpha-value-notation": null,
+        "max-line-length": null,
+        "value-keyword-case": null,
+        "keyframes-name-pattern": null,
+        "property-no-vendor-prefix": null,
         "block-no-empty": null,
         "no-eol-whitespace": [true, { "ignore": ["empty-lines"] }],
         "max-nesting-depth": 3,
@@ -36,10 +61,10 @@ module.exports = {
         "selector-max-type": 1,
         "selector-max-universal": 1,
         "no-duplicate-at-import-rules": true,
-        "media-feature-name-blacklist": [
+        "media-feature-name-disallowed-list": [
             ["max-width", "min-width", "min-resolution", "max-resolution"],
             {
-                "message": "hard-coded media queries are forbidden' (media-feature-name-blacklist)"
+                "message": "hard-coded media queries are forbidden' (media-feature-name-disallowed-list)"
             }
         ],
         "property-no-unknown": [true, {
@@ -54,7 +79,13 @@ module.exports = {
             },
             "utilitySelectors": "^\\.util-[a-z]+$"
         },
-        "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size", { ignoreValues: ["0", "-1", "inherit", "/z\(.*\)/"] }]],
+        "scale-unlimited/declaration-strict-value": [["/color/", "z-index", "font-size"], { 
+            ignoreValues: {
+                "/color/": ["inherit"],
+                "z-index":  ["0", "-1", "/z\(.*\)/", "inherit"],
+                "font-size": ["0", "inherit"]
+            },
+        }],
 
         // LORA specific rules
         "lora/variable-pattern": [/(components|layout)(\/.*\/)?\/*_.+.scss/, { ignore: 'local' }], // Pattern is meant to filter the files.
